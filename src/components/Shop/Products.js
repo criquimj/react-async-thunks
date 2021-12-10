@@ -1,0 +1,44 @@
+import ProductItem from "./ProductItem";
+import classes from "./Products.module.css";
+
+const DUMMY_PRODUCTS = [
+  {
+    id: "p1",
+    title: "Dune",
+    price: 15,
+    description: "First book",
+  },
+  {
+    id: "p2",
+    title: "Dune: Messiah",
+    price: 11,
+    description: "Second book",
+  },
+  {
+    id: "p3",
+    title: "Children of Dune",
+    price: 14,
+    description: "Third book",
+  },
+];
+
+const Products = (props) => {
+  return (
+    <section className={classes.products}>
+      <h2>Buy your favorite products</h2>
+      <ul>
+        {DUMMY_PRODUCTS.map((product) => (
+          <ProductItem
+            key={product.id}
+            id={product.id}
+            title={product.title}
+            price={product.price}
+            description={product.description}
+          />
+        ))}
+      </ul>
+    </section>
+  );
+};
+
+export default Products;
